@@ -39,7 +39,10 @@ export default function Navbar() {
                     exit={{ y: -80, opacity: 0 }}
                     transition={{ duration: 0.4, ease: 'easeInOut' }}
                 >
-                    <a href="#hero" className="nav-logo">AQUIB<span className="accent">®</span></a>
+                    <a href="#hero" className="nav-logo">
+                        <img src="/k_logo.png" alt="Keplar Logo" className="logo-img" />
+                        <span>AQUIB<span className="accent">®</span></span>
+                    </a>
 
                     <ul className="nav-links hide-mobile">
                         {links.map(l => (
