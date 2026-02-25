@@ -1,0 +1,211 @@
+.research-section {
+    padding: 100px 5%;
+}
+
+.research-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+.research-header {
+    margin-bottom: 56px;
+}
+
+.research-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-top: 16px;
+}
+
+.research-card {
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 48px;
+    background: var(--bg2);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.research-card:hover {
+    border-color: rgba(92, 122, 31, 0.3);
+}
+
+.research-top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #5c7a1f, #c8f65d, transparent);
+}
+
+.research-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.research-badge {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    background: rgba(92, 122, 31, 0.1);
+    color: var(--accent);
+    border: 1px solid rgba(92, 122, 31, 0.3);
+    border-radius: 100px;
+}
+
+.research-year {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.research-paper-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2.5vw, 1.85rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.35;
+}
+
+.research-journal {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.research-divider {
+    height: 1px;
+    background: var(--border);
+}
+
+/* Two-column body */
+.research-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.research-section-label {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+}
+
+.research-abstract {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.9;
+}
+
+.research-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.research-keyword {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    background: var(--bg3);
+    color: var(--text-muted);
+    cursor: default;
+}
+
+/* Table */
+.research-table-wrap {
+    overflow-x: auto;
+}
+
+.research-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+}
+
+.research-table th {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+    color: var(--text-muted);
+}
+
+.research-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+}
+
+.research-table tr:last-child td {
+    border-bottom: none;
+}
+
+.research-table tr:hover td {
+    background: var(--bg3);
+}
+
+.td-llama {
+    color: #06b6d4;
+    font-weight: 600;
+}
+
+.td-mistral {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.research-note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 12px;
+    font-style: italic;
+}
+
+.research-footer-btn {
+    display: flex;
+}
+
+.research-link {
+    font-size: 0.75rem;
+    padding: 10px 22px;
+}
+
+@media (max-width: 900px) {
+    .research-body {
+        grid-template-columns: 1fr;
+    }
+
+    .research-card {
+        padding: 28px 20px;
+    }
+}

@@ -1,0 +1,147 @@
+.hackathons-section {
+    padding: 100px 5%;
+}
+
+.hack-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+.hack-header {
+    margin-bottom: 56px;
+}
+
+.hack-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-top: 16px;
+}
+
+.hack-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hack-item {
+    display: flex;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    background: var(--bg2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.hack-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+    border-color: rgba(92, 122, 31, 0.25);
+}
+
+.hack-stripe {
+    width: 5px;
+    flex-shrink: 0;
+}
+
+.hack-content {
+    padding: 32px 36px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.hack-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hack-badges {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hack-number {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.hack-result-badge {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border: 1px solid;
+    border-radius: 100px;
+}
+
+.hack-year-tag {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+}
+
+.hack-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+.hack-organizer {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+}
+
+.hack-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.85;
+    max-width: 750px;
+}
+
+.hack-tech-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.hack-chip {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 5px 13px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    background: var(--bg3);
+    color: var(--text-muted);
+    cursor: default;
+}
+
+@media (max-width: 600px) {
+    .hack-content {
+        padding: 20px;
+    }
+
+    .hack-stripe {
+        width: 4px;
+    }
+}

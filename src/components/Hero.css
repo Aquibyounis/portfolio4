@@ -1,0 +1,204 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 130px 5% 80px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Radial glow background */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    height: 70vh;
+    background: radial-gradient(ellipse at center, rgba(92, 122, 31, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Noise grain overlay */
+.noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.015;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 36px;
+}
+
+.badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+/* Giant name */
+.hero-name-wrap {
+    overflow: hidden;
+    margin-bottom: 48px;
+}
+
+.hero-name {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0;
+}
+
+.hero-char {
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 18vw, 15rem);
+    font-weight: 700;
+    line-height: 0.9;
+    color: var(--text);
+    display: inline-block;
+    letter-spacing: -0.03em;
+}
+
+.hero-reg {
+    font-size: clamp(1.8rem, 5vw, 4rem);
+    align-self: flex-start;
+    margin-top: 0.6em;
+}
+
+/* Meta row */
+.hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 44px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero-meta-divider {
+    width: 1px;
+    height: 50px;
+    background: var(--border);
+}
+
+.hero-role {
+    font-family: var(--font-display);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.hero-tagline {
+    font-family: var(--font-body);
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 240px;
+    text-align: left;
+}
+
+/* CTAs */
+.hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 64px;
+}
+
+/* Scroll cue */
+.hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    animation: scroll-anim 2s ease-in-out infinite;
+}
+
+@keyframes scroll-anim {
+
+    0%,
+    100% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scaleY(0.5);
+        opacity: 0.4;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-char {
+        font-size: clamp(4rem, 22vw, 8rem);
+    }
+
+    .hero-meta {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .hero-meta-divider {
+        width: 50px;
+        height: 1px;
+    }
+
+    .hero-tagline {
+        text-align: center;
+        max-width: 100%;
+    }
+}

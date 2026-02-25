@@ -1,0 +1,68 @@
+.loader-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    /* Prevent any scroll on the body while loader is up */
+    overflow: hidden;
+}
+
+/* Subtle green radial center glow */
+.loader-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(92, 122, 31, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ── Letters ── */
+.loader-letters {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    position: relative;
+    z-index: 2;
+}
+
+.loader-char {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(5rem, 18vw, 13rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #0a0a0a;
+    display: inline-block;
+    transform-origin: center bottom;
+    line-height: 1;
+    will-change: transform, opacity;
+}
+
+.loader-reg {
+    font-size: clamp(1.8rem, 4.5vw, 4rem);
+    color: #5c7a1f;
+    align-self: flex-start;
+    margin-top: 0.35em;
+}
+
+/* ── Accent line that expands under name ── */
+.loader-line {
+    width: 320px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #5c7a1f 30%, #c8f65d 70%, transparent);
+    transform-origin: left center;
+    border-radius: 2px;
+}
+
+/* ── Tagline ── */
+.loader-tag {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #888;
+}

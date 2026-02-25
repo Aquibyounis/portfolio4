@@ -1,0 +1,123 @@
+.services-section {
+    padding: 100px 5%;
+}
+
+.services-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+.services-header {
+    margin-bottom: 56px;
+}
+
+.services-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-top: 16px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    padding: 36px 28px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--bg2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition: border-color 0.4s ease;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(200, 246, 93, 0.06) 0%, transparent 70%);
+    transition: opacity 0.4s;
+}
+
+.service-card:hover {
+    border-color: rgba(200, 246, 93, 0.35);
+}
+
+.service-card:hover::before {
+    opacity: 2;
+}
+
+.service-card-top {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.service-tag {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+}
+
+.service-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.service-body {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    flex: 1;
+}
+
+.service-tech-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.service-tech {
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    color: var(--text-muted);
+}
+
+.service-arrow {
+    font-size: 1.2rem;
+    color: var(--accent);
+    align-self: flex-end;
+    margin-top: auto;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-arrow {
+    transform: translate(4px, -4px);
+}
+
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
