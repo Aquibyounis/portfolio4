@@ -1,13 +1,35 @@
 import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 import './ProjectDetail.css';
 
 export default function ProjectDetail({ project, onClose }) {
     // Lock body scroll when panel is open
     useEffect(() => {
+        const originalBodyOverflow = document.body.style.overflow;
+        const originalHtmlOverflow = document.documentElement.style.overflow;
+        const originalBodyHeight = document.body.style.height;
+        const originalHtmlHeight = document.documentElement.style.height;
+
+        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+
         document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.height = '100%';
+        document.documentElement.style.height = '100%';
+        document.body.classList.add('no-momentum');
+
+        if (scrollBarWidth > 0) {
+            document.body.style.paddingRight = `${scrollBarWidth}px`;
+        }
+
         return () => {
-            document.body.style.overflow = 'unset';
+            document.body.style.overflow = originalBodyOverflow;
+            document.documentElement.style.overflow = originalHtmlOverflow;
+            document.body.style.height = originalBodyHeight;
+            document.documentElement.style.height = originalHtmlHeight;
+            document.body.style.paddingRight = '0px';
+            document.body.classList.remove('no-momentum');
         };
     }, []);
 
@@ -22,7 +44,7 @@ export default function ProjectDetail({ project, onClose }) {
 
     if (!project) return null;
 
-    return (
+    const content = (
         <motion.div
             className="pd-overlay"
             initial={{ opacity: 0 }}
@@ -126,4 +148,6 @@ export default function ProjectDetail({ project, onClose }) {
             </motion.div>
         </motion.div>
     );
+
+    return createPortal(content, document.body);
 }

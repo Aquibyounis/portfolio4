@@ -150,9 +150,11 @@ export default function SelectedWork() {
                 </div>
             </section>
 
-            {selected && (
-                <ProjectDetail project={selected} onClose={() => setSelected(null)} />
-            )}
+            <AnimatePresence>
+                {selected && (
+                    <ProjectDetail project={selected} onClose={() => setSelected(null)} />
+                )}
+            </AnimatePresence>
         </>
     );
 }

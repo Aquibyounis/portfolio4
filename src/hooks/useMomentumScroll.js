@@ -14,7 +14,7 @@ export default function useMomentumScroll() {
         const MIN_VELOCITY = 0.1;   // stop when velocity is tiny
 
         function step() {
-            if (Math.abs(velocity) < MIN_VELOCITY) {
+            if (Math.abs(velocity) < MIN_VELOCITY || document.body.dataset.scrollLock === 'true') {
                 velocity = 0;
                 rafId = null;
                 return;
@@ -25,6 +25,12 @@ export default function useMomentumScroll() {
         }
 
         function onWheel(e) {
+            // Explicit check to disable momentum scroll (e.g. when a project is open)
+            if (document.body.classList.contains('no-momentum')) {
+                velocity = 0;
+                return;
+            }
+
             e.preventDefault();
 
             const now = performance.now();

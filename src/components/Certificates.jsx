@@ -13,12 +13,12 @@ const PUB = process.env.PUBLIC_URL + '/certs/';
 const certificateData = [
     {
         id: 1, title: 'Oracle Generative AI', image: `${PUB}c6.png`,
-        issuer: 'Oracle', year: '2024', category: 'AI / ML',
+        issuer: 'Oracle', year: '2025', category: 'AI / ML',
         description: 'Completed Oracle GEN AI certification. Finally got a grip in LLM and AI along with VectorDB and RAG. This certification validated my expertise in modern AI technologies and cloud-based generative AI solutions.',
     },
     {
         id: 2, title: 'MERN Full Stack', image: `${PUB}c1.png`,
-        issuer: 'Udemy', year: '2023', category: 'Web Dev',
+        issuer: 'SmartBridge', year: '2024', category: 'Web Dev',
         description: 'Completed MERN full stack course of duration 2 months. Been through highs and lows frequently. Complete mastering over multiple topics is essential in the modern world of AI and competition.',
     },
     {
@@ -27,12 +27,12 @@ const certificateData = [
         description: 'A self-paced learning path directly connected to MongoDB website. Mastered skills in MongoDB including aggregations, indexing, and schema design. Starting of my database learning journey.',
     },
     {
-        id: 4, title: 'Team Project Lead', image: `${PUB}c3.png`,
+        id: 4, title: 'Project Completion', image: `${PUB}c3.png`,
         issuer: 'SmartBridge', year: '2024', category: 'Web Dev',
         description: 'My first ever team project on real-life basis. Learned team management, work distribution, and collaboration with other campus students. Felt 100% satisfied after completing the website.',
     },
     {
-        id: 5, title: 'AWS Cloud Architecture', image: `${PUB}c4.png`,
+        id: 5, title: 'AWS Cloud Architecture Badge', image: `${PUB}c4.png`,
         issuer: 'AWS', year: '2024', category: 'Cloud',
         description: 'AWS Cloud Architecture badge. Completed the AWS cloud LAB with real-time hands-on experience in cloud infrastructure, scalability patterns, and best practices.',
     },
@@ -42,7 +42,7 @@ const certificateData = [
         description: 'Completed Oracle GEN AI course of self-based learning path. Gained experience in hands-on lab for RAG, VectorDB, and cloud integration of Oracle with AI models.',
     },
     {
-        id: 7, title: 'AWS Foundations', image: `${PUB}c5.png`,
+        id: 7, title: 'AWS Foundations Badge', image: `${PUB}c5.png`,
         issuer: 'AWS', year: '2024', category: 'Cloud',
         description: 'AWS Cloud Foundations badge with real-time experience in AWS Labs including EC2, S3, VPC, IAM roles, users, policies, databases like RDS, Aurora, and serverless deployments with Lambda.',
     },
